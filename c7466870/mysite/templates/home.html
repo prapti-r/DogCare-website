@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Home - FuurEver</title>
+{% endblock %}
+
+{% block maincontent %}
+    <!-- Hero Section -->
+    <section>
+      <div>
+        <div>
+          <div>
+            <div>
+              <h1>Welcome to FuurEver</h1>
+              <p>Your pet, our priority</p>
+              <div>
+                <a href="{% url 'services' %}">Our Services</a>
+              </div>
+            </div>
+            <div>
+              <img src="banner.png" alt="dog banner img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section>
+      <div>
+        <div>
+          <img src="dog.jpg" alt="Dog image">
+        </div>
+        <div>
+          <h2>Happy Pets, Happy Humans</h2>
+          <p>At FuurEver, we provide the best care for your pets with love and dedication. From walking to veterinary care, we ensure your furry friends are happy and healthy.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ea placeat magnam sequi omnis eius deleniti, porro, voluptatum minus libero architecto vitae fugiat illum iusto, ullam earum quae consectetur possimus!
+          </p>
+          <a href="{% url 'aboutus' %}">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section>
+      <div>
+        <h2>Our Latest Blog</h2>
+        <div>
+          <div>
+            <div>
+              <img src="dogbath.jpg" alt="Pet grooming img">
+            </div>
+            <div>
+              <h3>5 Tips for Grooming Your Dog</h3>
+              <p>Learn essential grooming techniques. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+              <a href="blog1">Read More</a>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <img src="dogeating.jpg" alt="Pet eating img">
+            </div>
+            <div>
+              <h3>Healthy Diet for Your Pup</h3>
+              <p>Top nutritional advice for your furry friend. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</p>
+              <a href="blog2">Read More</a>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <img src="dogtraining.jpg" alt="Pet Training img">
+            </div>
+            <div>
+              <h3>Training Basics</h3>
+              <p>Steps to a well-behaved dog. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+              <a href="blog3">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section id="services">
+      <div>
+        <h2>We Are Best In:</h2>
+        <div>
+          <div>
+            <img src="grooming.png" alt="Grooming icon">
+            <a href="service1">Grooming</a>
+            <p>Professional grooming to keep your pets looking their best.</p>
+          </div>
+
+          <div>
+            <img src="boarding.png" alt="Boarding icon">
+            <a href="services2">Boarding</a>
+            <p>Comfortable and secure overnight stays for your pets.</p>
+          </div>
+
+          <div>
+            <img src="training.png" alt="Training icon">
+            <a href="service3">Training</a>
+            <p>Effective training for better behavior and communication.</p>
+          </div>
+
+          <div>
+            <img src="veterinary.png" alt="Veterinary icon">
+            <a href="services4">Veterinary Care</a>
+            <p>Expert medical care to keep your pets healthy and happy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book Now Section -->
+    <section id="book-now">
+      <div>
+        <p>Ready to provide the best care for your furry friend? Schedule your service today!</p>
+        <div>
+          <a href="#booking-form">
+            <button type="button">Book Now</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
