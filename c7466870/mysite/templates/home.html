@@ -1,129 +1,57 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 <title>Home - FuurEver</title>
 {% endblock %}
 
 {% block maincontent %}
-    <!-- Hero Section -->
-    <section>
-      <div>
-        <div>
-          <div>
-            <div>
-              <h1>Welcome to FuurEver</h1>
-              <p>Your pet, our priority</p>
-              <div>
-                <a href="{% url 'services' %}">Our Services</a>
-              </div>
-            </div>
-            <div>
-              <img src="banner.png" alt="dog banner img">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- About Us Section -->
-    <section>
-      <div>
-        <div>
-          <img src="dog.jpg" alt="Dog image">
+  <!-- Hero Section with Text Overlay -->
+  <section class="hero is-fullheight">
+    <img class="hero-background" src="{% static 'img/dog-eating.jpg' %}" alt="Dog eating image">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title has-text-white is-size-1 is-size-3-mobile">Welcome to FuurEver</h1>
+        <p class="subtitle has-text-white">Your pet, our priority</p>
+        <a href="{% url 'services' %}" class="button is-light">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <figure class="image is-3by2 is-half-tablet">
+            <img src="{% static '\img\dog.jpg' %}" alt="Dog image">
+          </figure>
         </div>
-        <div>
-          <h2>Happy Pets, Happy Humans</h2>
-          <p>At FuurEver, we provide the best care for your pets with love and dedication. From walking to veterinary care, we ensure your furry friends are happy and healthy.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ea placeat magnam sequi omnis eius deleniti, porro, voluptatum minus libero architecto vitae fugiat illum iusto, ullam earum quae consectetur possimus!
+        <div class="column is-half-tablet">
+          <h2 class="title is-size-5-touch mb-3">Happy Pets, Happy Humans</h2>
+          <p class="mb-4 subtitle is-size-6-touch ">At FuurEver, we provide the best care for your pets with love and dedication. From walking to veterinary care, we ensure your furry friends are happy and healthy.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos incidunt molestiae nulla fugit saepe! Non similique, quae necessitatibus error culpa aperiam rem laudantium reprehenderit quia. Commodi, magnam aliquid! Esse, consequuntur.
           </p>
-          <a href="{% url 'aboutus' %}">Learn more</a>
+          <a href="{% url 'aboutus' %}" class="button is-link ">Learn more</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Blog Section -->
-    <section>
+  <!-- Blog Section -->
+   
+  <!-- Our Services Section -->
+    
+  <!-- Book Now Section -->
+  <section class="section has-background-link-soft" id="book-now">
+    <div class="container has-text-centered">
+      <p class="title is-size-4 is-size-5-touch">Ready to provide the best care for your furry friend?</p>
+      <p class="subtitle is-size-6-touch">Schedule your service today!</p>
       <div>
-        <h2>Our Latest Blog</h2>
-        <div>
-          <div>
-            <div>
-              <img src="dogbath.jpg" alt="Pet grooming img">
-            </div>
-            <div>
-              <h3>5 Tips for Grooming Your Dog</h3>
-              <p>Learn essential grooming techniques. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
-              <a href="blog1">Read More</a>
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <img src="dogeating.jpg" alt="Pet eating img">
-            </div>
-            <div>
-              <h3>Healthy Diet for Your Pup</h3>
-              <p>Top nutritional advice for your furry friend. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</p>
-              <a href="blog2">Read More</a>
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <img src="dogtraining.jpg" alt="Pet Training img">
-            </div>
-            <div>
-              <h3>Training Basics</h3>
-              <p>Steps to a well-behaved dog. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
-              <a href="blog3">Read More</a>
-            </div>
-          </div>
-        </div>
+        <a href="#booking-form" class="button is-link">Book Now</a>
       </div>
-    </section>
-
-    <!-- Our Services Section -->
-    <section id="services">
-      <div>
-        <h2>We Are Best In:</h2>
-        <div>
-          <div>
-            <img src="grooming.png" alt="Grooming icon">
-            <a href="service1">Grooming</a>
-            <p>Professional grooming to keep your pets looking their best.</p>
-          </div>
-
-          <div>
-            <img src="boarding.png" alt="Boarding icon">
-            <a href="services2">Boarding</a>
-            <p>Comfortable and secure overnight stays for your pets.</p>
-          </div>
-
-          <div>
-            <img src="training.png" alt="Training icon">
-            <a href="service3">Training</a>
-            <p>Effective training for better behavior and communication.</p>
-          </div>
-
-          <div>
-            <img src="veterinary.png" alt="Veterinary icon">
-            <a href="services4">Veterinary Care</a>
-            <p>Expert medical care to keep your pets healthy and happy.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Book Now Section -->
-    <section id="book-now">
-      <div>
-        <p>Ready to provide the best care for your furry friend? Schedule your service today!</p>
-        <div>
-          <a href="#booking-form">
-            <button type="button">Book Now</button>
-          </a>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
 {% endblock %}
