@@ -7,6 +7,7 @@
 
     {% endblock %}
     <link href="/static/css/bulma.min.css" rel="stylesheet">
+    <link href="/static/css/mystyle.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
@@ -33,7 +34,7 @@
                         <a class="navbar-item mx-2 my-2" href="{% url 'home' %}">Home</a>
                         <a class="navbar-item mx-2 my-2" href="{% url 'aboutus' %}">About Us</a>
                         <a class="navbar-item mx-2 my-2" href="{% url 'services' %}">Services</a>
-                        <a class="navbar-item mx-2 my-2" href="{% url 'blog' %}">Blog</a>
+                        <a class="navbar-item mx-2 my-2" href="{% url 'blog_list' %}">Blog</a>
                         <a class="navbar-item mx-2 my-2" href="{% url 'contact' %}">Contact</a>
                     </div>
                 </div>
@@ -57,7 +58,7 @@
                         <li><a href="{% url 'home' %}" class="has-text-dark">Home</a></li>
                         <li><a href="{% url 'aboutus' %}" class="has-text-dark">About Us</a></li>
                         <li><a href="{% url 'services' %}" class="has-text-dark">Services</a></li>
-                        <li><a href="{% url 'blog' %}" class="has-text-dark">Blog</a></li>
+                        <li><a href="{% url 'blog_list' %}" class="has-text-dark">Blog</a></li>
                         <li><a href="{% url 'contact' %}" class="has-text-dark">Contact</a></li>
                     </ul>
                 </div>
