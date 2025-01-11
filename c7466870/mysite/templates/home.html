@@ -24,7 +24,7 @@
     <div class="container">
       <div class="columns is-vcentered">
         <div class="column">
-          <figure class="image is-3by2 is-half-tablet">
+          <figure class="image is-3by2 is-half-tablet is-hidden-mobile">
             <img src="{% static '\img\dog.jpg' %}" alt="Dog image">
           </figure>
         </div>
@@ -39,8 +39,39 @@
     </div>
   </section>
 
-  <!-- Blog Section -->
-   
+<!-- Blog Section -->
+<div class="section">
+  <div class="container">
+    <h2 class="title has-text-centered">Our Latest Blog</h2>
+    <div class="columns is-multiline is-centered is-variable is-4">
+      {% for post in blogs_posts %}
+      <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
+        <div class="card blog-card has-background-link-soft is-shadowless card-responsive">
+          <div class="card-image">
+            <figure class="image is-3by2">
+              {% if post.image %}
+              <img src="{{ post.image.url }}" alt="{{ post.title }}">
+              {% endif %}
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="is-size-7 has-text-grey">{{ post.created_at|date:"M d, Y" }} | {{ post.category.name }}</p>
+            <h3 class="title is-5">{{ post.title }}</h3>
+            <p>{{ post.summary|truncatewords:20 }}</p>
+          </div>
+          <div class="card has-background-link-soft is-shadowless">
+            <a href="{% url 'blog_detail' post.slug %}" class="button is-text">Read More</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+
+
   <!-- Our Services Section -->
     
   <!-- Book Now Section -->
