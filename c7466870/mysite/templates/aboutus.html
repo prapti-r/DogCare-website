@@ -6,94 +6,154 @@
 {% endblock %}
 
 {% block maincontent %}
-    <div>
-        <h1>About Us</h1>
-    </div>
-
     <!-- Content Section -->
-    <section>
-        <div>
-            <div>
-                <img src="{% static '\img\dog.jpg' %}" alt="Dog image" style="border-radius: 10px;">
+        <section class="section">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <!-- Left Column: Image -->
+                    <div class="column is-5">
+                        <figure class="image">
+                            <img src="{% static '\img\dog.jpg' %}" alt="Dog image" style="border-radius: 10px;">
+                        </figure>
+                    </div>
+                    <!-- Right Column: Text Content -->
+                    <div class="column is-7">
+                        <div class="content">
+                            <h2 class="is-size-3 is-size-4-mobile">All About FuurEver</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatibus, dolor sunt,
+                                 itaque temporibus animi iusto maxime provident modi tempore assumenda. Obcaecati natus 
+                                 magnam illum quas aspernatur, nostrum laudantium sunt!Lorem. Lorem ipsum dolor sit amet 
+                                 consectetur adipisicing elit. In perspiciatis cumque aliquid dolores nulla. Eum possimus 
+                                 nesciunt magnam tempora quidem, esse molestiae sapiente voluptatem eos consequatur 
+                                 repudiandae ea dignissimos laudantium!
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae repellendus ab rerum necessitatibus
+                                quo qui incidunt veritatis enim sit. Provident sit libero asperiores dolorem accusamus doloremque sequi 
+                                praesentium totam impedit? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum porro suscipit 
+                                possimus obcaecati aliquid similique iste, dolorem molestias aut reprehenderit autem itaque consequatur 
+                                voluptas natus fugiat voluptates ipsam quia nihil!
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h2>Our Mission</h2>
-                <p>
-                    At DogCare, we understand that your dog is more than just a pet—they're family. 
-                    Our mission is to provide comprehensive, personalized care for every dog, helping their owners give them 
-                    the best life possible. Our mission is to make dog care accessible, professional, and enjoyable. 
-                    Whether it's grooming, training, or ensuring their health, we're here to support dog owners at every step.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae repellendus ab rerum necessitatibus
-                    quo qui incidunt veritatis enim sit. Provident sit libero asperiores dolorem accusamus doloremque sequi 
-                    praesentium totam impedit? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum porro suscipit 
-                    possimus obcaecati aliquid similique iste, dolorem molestias aut reprehenderit autem itaque consequatur 
-                    voluptas natus fugiat voluptates ipsam quia nihil!
-                </p>
-            </div>   
+        </section>
+
+    <!--mission section-->
+    <div class="column has-background-link-soft has-text-centered">
+        <div class="container ">
+            <h2 class ="title is-size-4 m-3">Our Mission</h2>
+            <p class="subtitle is-size-6-mobile m-2 p-3">
+                At DogCare, we understand that your dog is more than just a pet—they're family. 
+                Our mission is to provide comprehensive, personalized care for every dog, helping their owners give them 
+                the best life possible. Our mission is to make dog care accessible, professional, and enjoyable. 
+                Whether it's grooming, training, or ensuring their health, we're here to support dog owners at every step.
+            </p>
+        </div>
+    </div>
+        
+    
+    <!-- Why Choose Us Section -->
+    <section class="choose-section m-6 p-3">
+        <div class="container">
+            <h2 class="title is-size-3 has-text-centered is-size-4-mobile">Why Choose Us?</h2>
+            <div class="columns is-multiline">
+                <div class="column is-one-third-desktop is-half-tablet">
+                    <div class="box has-text-centered">
+                        <i class="icon fa fa-paw fa-2x mb-3 has-text-primary"></i>
+                        <h3 class="subtitle has-text-info-bold">Experienced Professionals</h3>
+                        <p>Our team has years of experience in dog care, training, and veterinary services.</p>
+                    </div>
+                </div>
+                <div class="column is-one-third-desktop is-half-tablet">
+                    <div class="box has-text-centered">
+                        <i class="icon fa fa-heart fa-2x mb-3 has-text-danger"></i>
+                        <h3 class="subtitle has-text-info-bold">Personalized Care</h3>
+                        <p>Every dog is unique, and we tailor our services to meet their specific needs.</p>
+                    </div>
+                </div>
+                <div class="column is-one-third-desktop is-half-tablet">
+                    <div class="box has-text-centered">
+                        <i class="icon fa fa-building fa-2x mb-3 has-text-info"></i>
+                        <h3 class="subtitle has-text-info-bold">State-of-the-Art Facilities</h3>
+                        <p>We provide a safe, comfortable, and fun environment for all our furry clients.</p>
+                    </div>
+                </div>
+                <div class="column is-one-third-desktop is-half-tablet">
+                    <div class="box has-text-centered">
+                        <i class="icon fa fa-stethoscope fa-2x mb-3 has-text-link"></i>
+                        <h3 class="subtitle has-text-info-bold">Vet-Recommended</h3>
+                        <p>Trusted and recommended by leading veterinarians.</p>
+                    </div>
+                </div>
+                <div class="column is-one-third-desktop is-half-tablet">
+                    <div class="box has-text-centered">
+                        <i class="icon fa fa-home fa-2x mb-3 has-text-warning"></i>
+                        <h3 class="subtitle has-text-info-bold">Safe & Loving</h3>
+                        <p>We provide a safe and loving environment for your pets.</p>
+                    </div>
+                </div>
+                <div class="column is-one-third-desktop is-half-tablet">
+                    <div class="box has-text-centered">
+                        <i class="icon fa fa-handshake fa-2x mb-3 has-text-success"></i>
+                        <h3 class="subtitle has-text-info-bold">Trusted by Dog Owners</h3>
+                        <p>Our clients trust us to provide the best care for their beloved pets.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section>
-        <div>
-            <h2>Why Choose Us?</h2>
-                <div>
-                    <i class="icon fa fa-paw"></i>
-                    <h3>Experienced Professionals</h3>
-                    <p>Our team has years of experience in dog care, training, and veterinary services.</p>
-                </div>
-                <div>
-                    <i class="icon fa fa-heart"></i>
-                    <h3>Personalized Care</h3>
-                    <p>Every dog is unique, and we tailor our services to meet their specific needs.</p>
-                </div>
-                <div>
-                    <i class="icon fa fa-building"></i>
-                    <h3>State-of-the-Art Facilities</h3>
-                    <p>We provide a safe, comfortable, and fun environment for all our furry clients.</p>
-                </div>
-                <div>
-                    <i class="icon fa fa-stethoscope"></i>
-                    <h3>Vet-Recommended</h3>
-                    <p>Trusted and recommended by leading veterinarians.</p>
-                </div>
-                <div>
-                    <i class="icon fa fa-home"></i>
-                    <h3>Safe & Loving</h3>
-                    <p>We provide a safe and loving environment for your pets.</p>
-                </div>
-                <div>
-                    <i class="icon fa fa-handshake"></i>
-                    <h3>Trusted by Dog Owners</h3>
-                    <p>Our clients trust us to provide the best care for their beloved pets.</p>
-                </div>         
-        </div>
-    </section>
 
     <!-- Team Section -->
-    <section>
+    <section class="team-section m-6 p-3">
+        <div class="container">
+            <h2 class="title is-size-3 has-text-centered is-size-4-mobile">Meet Our Team</h2>
+            <div class="columns is-multiline is-centered">
+                <div class="column is-one-third">
+                    <div class="box has-text-centered is-shadowless">
+                        <figure class="image is-128x128 is-inline-block">
+                            <img class="is-rounded" src="{% static '\img\jane.jpg' %}" alt="Jane Doe">
+                        </figure>
+                        <h3 class="subtitle">Jane Doe</h3>
+                        <p><strong>Founder & Lead Trainer</strong></p>
+                        <p>Jane has over 10 years of experience training dogs and has a passion for helping both pets and their owners.</p>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="box has-text-centered is-shadowless">
+                        <figure class="image is-128x128 is-inline-block">
+                            <img class="is-rounded" src="{% static '\img\Jayden.jpg' %}" alt="Jayden Thomas">
+                        </figure>
+                        <h3 class="subtitle">Jayden Thomash</h3>
+                        <p><strong>Veterinarian</strong></p>
+                        <p>John ensures the health and wellbeing of all our furry clients, providing expert veterinary care.</p>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="box has-text-centered is-shadowless">
+                        <figure class="image is-128x128 is-inline-block">
+                            <img class="is-rounded" src="{% static '\img\susan.jpg' %}" alt="Susan Lee">
+                        </figure>
+                        <h3 class="subtitle">Susan Lee</h3>
+                        <p><strong>Grooming Specialist</strong></p>
+                        <p>Susan’s gentle touch and eye for detail make every dog look and feel their best.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Now Section -->
+    <section class="section has-background-link-soft" id="book-now">
+        <div class="container has-text-centered">
+        <p class="title is-size-4 is-size-5-touch">Ready to provide the best care for your furry friend?</p>
+        <p class="subtitle is-size-6-touch">Schedule your service today!</p>
         <div>
-            <h2>Meet Our Team</h2>
-            <div>
-                <img src="team1.jpg" alt="Jane Doe">
-                <h3>Jane Doe</h3>
-                <p>Founder & Lead Trainer</p>
-                <p>Jane has over 10 years of experience training dogs and has a passion for helping both pets and their owners.</p>
-            </div>
-            <div>
-                <img src="team2.jpg" alt="John Smith">
-                <h3>John Smith</h3>
-                <p>Veterinarian</p>
-                <p>John ensures the health and wellbeing of all our furry clients, providing expert veterinary care.</p>
-            </div>
-            <div>
-                <img src="team3.jpg" alt="Susan Lee">
-                <h3>Susan Lee</h3>
-                <p>Grooming Specialist</p>
-                <p>Susan’s gentle touch and eye for detail make every dog look and feel their best.</p>
-            </div>
+            <a href="#booking-form" class="button is-link">Book Now</a>
+        </div>
         </div>
     </section>
 
