@@ -3,7 +3,8 @@ from django.shortcuts import render
 from blog.models import BlogPost, Category
 
 def home(request):
-    return render(request, "home.html", {})
+    blogs_posts = BlogPost.objects.all().order_by('-created_at')[:3]  
+    return render(request, 'home.html', {'blogs_posts': blogs_posts})
 
 def aboutus(request):
     return render(request, "aboutus.html")
