@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Contact Us - FuurEver</title>
+{% endblock %}
+
+{% block maincontent %}
+        <div>
+            <h1 >Contact Us</h1>
+            <h2 >We'd love to hear from you!</h2>
+        </div>
+
+        <!-- Contact Section with Form and Info -->
+        <section>
+            <div>
+                <div>
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 >Our Contact Information</h2>
+                        <p><strong>Email: </strong>info@example.com</p>
+                        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                        <p><strong>Address:</strong> 123 Example St, City, Country</p>
+                            
+                        <h2 >Business Hours</h2>
+                        <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                        <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+                        <p><strong>Sunday:</strong> Closed</p>
+                    </div>
+                    <!-- Contact Form -->
+                    <div >
+                        <h2 >Send Us a Message</h2>
+                        <form action="#" method="POST">
+                            <div class="field">
+                                <label class="label">Name</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Your Full Name" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control">
+                                    <input class="input" type="email" placeholder="Your Email Address" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Message</label>
+                                <div class="control">
+                                    <textarea class="textarea" placeholder="Your Message" required></textarea>
+                                </div>
+                            </div>
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button>Submit</button>
+                                </div>
+                                <div class="control">
+                                    <button type="reset">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section >
+            <div>
+                <h2 >Find Us</h2>
+                <div >
+                    <iframe src="#" >
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+
+    
+{% endblock %}
