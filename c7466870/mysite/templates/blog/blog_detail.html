@@ -6,13 +6,56 @@
 
 {% block maincontent %}
 
-<h1>{{ post.title }}</h1>
-    <p>By: {{ post.author }}</p>
-    <p>Category: {{ post.category }} | Published on: {{ post.created_at }}</p>
-    <img src="{{ post.image.url }}" alt="{{ post.title }}">
-    <p>{{ post.content }}</p>
+  <section class="section">
+  <div class="container">
 
-    <a href="{% url 'blog_list' %}">Back to Blog</a>
+    <div class="columns">
+      <!-- Sidebar for Categories -->
+      <div class="column is-one-quarter">
+        <aside class="menu">
+          <p class="menu-label">Categories</p>
+          <ul class="menu-list">
+            {% for category in categories %}
+            <li>
+              <a href="#">{{ category.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Blog Posts Section -->
+      <div class="column is-three-quarters">
+          <div class="content is-vcentered ">
+        <!-- Blog Title and Meta Info -->
+        <h1 class="title is-size-3 is-size-4-mobile">{{ post.title }}</h1>
+        <p class="meta subtitle is-size-6 has-text-grey mt-2">
+          Category: <span class="tag is-link is-medium">{{ post.category.name }}</span> | 
+          Published on: {{ post.created_at|date:"M d, Y" }} <br> By: {{ post.author }}
+        </p>
+    
+          <!-- Blog Image with Text Wrapping -->
+          <div class="columns is-variable is-8 is-flex-wrap-wrap">
+            <div class="column is-one-third">
+              <figure class="image is-4by3 mt-2">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+              </figure>
+            </div>
+            <div class="column">
+              <div class="content has-text-justified">
+                {{ post.content|linebreaks }}
+              </div>
+            </div>
+          </div>
+      
+          <!-- Back to Blog Button -->
+          <div class="mt-5">
+            <a href="{% url 'blog_list' %}" class="button is-link">Back to Blog</a>
+          </div>
+        </div>
+        
+      </div>
+    </section>
 
 {% endblock %}
 
