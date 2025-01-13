@@ -6,7 +6,8 @@ from services.forms import BookingForm
 
 def home(request):
     blogs_posts = BlogPost.objects.all().order_by('-created_at')[:3]  
-    return render(request, 'home.html', {'blogs_posts': blogs_posts})
+    categories = ServiceCategory.objects.all()[:4]  
+    return render(request, 'home.html', {'categories': categories, 'blogs_posts': blogs_posts})
 
 def aboutus(request):
     return render(request, "aboutus.html")
@@ -28,9 +29,6 @@ def servicedetail(request, category_slug):
 
     return render(request, 'services/service_detail.html', {'category': category, 'form': form})
 
-    
-def contact(request):
-    return render(request, "contact.html")
 
 def blog(request):
     blog = blog.objects.all()
@@ -43,6 +41,12 @@ def blogdetail(request):
     return render(request, "blogdetail.html")
 
 
-
+def contact_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        return HttpResponse("Thank you for your message!")
+    return render(request, 'contact.html')
 
 

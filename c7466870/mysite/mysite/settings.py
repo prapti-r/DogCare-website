@@ -35,6 +35,7 @@ APPEND_SLASH = True
 
 INSTALLED_APPS = [
     'blog',
+    'services',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -139,3 +140,12 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'prapti.risal12@gmail.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'ywar rxcy pgir vlef'  # Your email password
+EMAIL_RECEIVER = 'prapti.risal12@gmail.com'  # Email to receive contact messages

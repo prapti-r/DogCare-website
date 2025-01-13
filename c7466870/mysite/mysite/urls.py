@@ -26,9 +26,12 @@ urlpatterns = [
     path('aboutus/', views.aboutus, name='aboutus'),
     path('services/', include('services.urls')),
     path('servicedetail/<int:id>', views.servicedetail, name="servicedetail"),
-    path('contact/', views.contact, name='contact'),
+    path('contact/', views.contact_view, name='contact'),
     path('blog/', include('blog.urls')),
     path('blogdetail/<int:id>', views.blogdetail, name="blogdetail"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+

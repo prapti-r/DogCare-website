@@ -23,6 +23,9 @@ def services_list(request):
 
 def services_detail(request, slug):
     category = get_object_or_404(ServiceCategory, slug=slug)
-    return render(request, 'services/services_detail.html', {'category': category,})
+    categories = ServiceCategory.objects.all()
+    return render(request, 'services/services_detail.html', {'category': category, 'categories': categories, })
+
+    
 
     
