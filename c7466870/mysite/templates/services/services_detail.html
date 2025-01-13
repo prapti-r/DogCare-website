@@ -1,0 +1,30 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}
+<title>{{ category.name }} Services</title>
+{% endblock %}
+
+{% block maincontent %}
+
+        <h1>{{ category.name }}</h1>
+        <p c>{{ category.description }}</p>
+
+        <hr>
+
+        <h2>Available Services</h2>
+        <ul>
+            {% for service in category.services.all %}
+            <li >
+                <h3 >{{ service.name }}</h3>
+                <p >NPR. {{ service.price }}</p>
+                <p>{{ service.description }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <hr>
+
+
+{% endblock %}

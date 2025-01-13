@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+<title>services</title>
+{% endblock %}
+
+{% block maincontent %}
+{% for category in categories %}
+    <li>
+        <img src="{{ category.image.url }}" alt="{{ category.name }}">
+        <a href="{% url 'services_detail' category.slug %}">{{ category.name }}</a>
+        {% if category.special_offer %}
+        <strong>(Special Offer!)</strong>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+<h1>{{ category.name }}</h1>
+<p>{{ category.description }}</p>
+
+<h2>Special Offers</h2>
+<ul>
+    {% for offer in special_offers %}
+        <p> {{ offer.title }} </p>
+            <strong>{{ offer.title }}</strong>: 
+             {% for service in offer.services.all %} {{ service.name }}{% if not forloop.last %}, {% endif %}
+                {% empty %}
+                    No services available.
+                    {% endfor %}
+                <p>({{ offer.discount_percentage }}% off)</p>
+                    <p>Valid until: {{ offer.valid_until }}</p>
+                    {% empty %}
+                    <p class="notification is-danger">No special offers available at this time.</p>
+                            {% endfor %}
+
+
+<h2>Book a Service</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit </button>
+</form>
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}
