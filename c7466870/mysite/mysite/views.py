@@ -24,7 +24,6 @@ def servicedetail(request, category_slug):
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save()
-            # Optional: Add a success message or redirect
             return redirect('services_list')
 
     return render(request, 'services/service_detail.html', {'category': category, 'form': form})
