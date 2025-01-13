@@ -6,48 +6,167 @@
 {% endblock %}
 
 {% block maincontent %}
-{% for category in categories %}
-    <li>
-        <img src="{{ category.image.url }}" alt="{{ category.name }}">
-        <a href="{% url 'services_detail' category.slug %}">{{ category.name }}</a>
-        {% if category.special_offer %}
-        <strong>(Special Offer!)</strong>
-        {% endif %}
-    </li>
-    {% endfor %}
-</ul>
-<h1>{{ category.name }}</h1>
-<p>{{ category.description }}</p>
+<div class="box is-shadowless has-text-centered">
+    <h1 class="title is-2 has-text-centered">Our Services</h1>
+</div>
+<section class="section">
+    <div class="container">
+            
+        <!-- Categories List -->
+        <div class="columns is-multiline">
+            {% for category in categories %}
+            <div class="column is-half mb-2">
+                <a href="{% url 'services_detail' category.slug %}" class="has-text-text">
+                    <div class="columns is-vcentered">
+                        <div class="column is-narrow has-text-centered">
+                            <figure class="image is-64x64 is-centered">
+                                <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                            </figure>
+                        </div>
+                        <div class="column is-centered">
+                            <h4 class="is-size-4 has-text-weight-bold">{{ category.name }}</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        
+        
+        <hr>
 
-<h2>Special Offers</h2>
-<ul>
-    {% for offer in special_offers %}
-        <p> {{ offer.title }} </p>
-            <strong>{{ offer.title }}</strong>: 
-             {% for service in offer.services.all %} {{ service.name }}{% if not forloop.last %}, {% endif %}
-                {% empty %}
-                    No services available.
-                    {% endfor %}
-                <p>({{ offer.discount_percentage }}% off)</p>
-                    <p>Valid until: {{ offer.valid_until }}</p>
+        <!-- Special Offers Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-3 has-text-centered">Special Offers</h2>
+                <div class="columns is-multiline is-centered">
+                    {% for offer in special_offers %}
+                    <div class="column is-6-tablet is-4-desktop">
+                        <div class="box has-background-light">
+                            <strong class="is-size-5">{{ offer.title }}</strong>: 
+                            <span class="tag is-success is-light">({{ offer.discount_percentage }}% off)</span>
+                            <br>
+                            <small>Valid until: {{ offer.valid_until }}</small>
+                            <p>
+                                {% for service in offer.services.all %}
+                                    {{ service.name }}{% if not forloop.last %}, {% endif %}
+                                {% empty %}
+                                    No services available.
+                                {% endfor %}
+                            </p>
+                            
+                        </div>
+                    </div>
                     {% empty %}
-                    <p class="notification is-danger">No special offers available at this time.</p>
+                    <div class="notification is-danger">No special offers available at this time.</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <!-- Booking Form -->
+        <section id="booking-form">
+            <h2 class="title is-3 has-text-centered">Book a Service</h2>
+            <form method="post" class="box">
+                {% csrf_token %}
+                
+                <!-- Customer Name Field -->
+                <div class="field">
+                    <label class="label" for="{{ form.customer_name.id_for_label }}">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" name="{{ form.customer_name.name }}" id="{{ form.customer_name.id_for_label }}" value="{{ form.customer_name.value }}" placeholder="Enter your name">
+                    </div>
+                    {% if form.customer_name.errors %}
+                    <p class="help is-danger">{{ form.customer_name.errors }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Customer Email Field -->
+                <div class="field">
+                    <label class="label" for="{{ form.customer_email.id_for_label }}">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" name="{{ form.customer_email.name }}" id="{{ form.customer_email.id_for_label }}" value="{{ form.customer_email.value }}" placeholder="Enter your email">
+                    </div>
+                    {% if form.customer_email.errors %}
+                    <p class="help is-danger">{{ form.customer_email.errors }}</p>
+                    {% endif %}
+                </div>
+
+                <!-- Date and Time Fields -->
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <label class="label" for="{{ form.date.id_for_label }}">Date</label>
+                            <div class="control has-icons-right">
+                                <input class="input" type="date" name="{{ form.date.name }}" id="{{ form.date.id_for_label }}" value="{{ form.date.value }}">
+                            </div>
+                            {% if form.date.errors %}
+                            <p class="help is-danger">{{ form.date.errors }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="field">
+                            <label class="label" for="{{ form.time.id_for_label }}">Time</label>
+                            <div class="control has-icons-right">
+                                <input class="input" type="time" name="{{ form.time.name }}" id="{{ form.time.id_for_label }}" value="{{ form.time.value }}">
+                            </div>
+                            {% if form.time.errors %}
+                            <p class="help is-danger">{{ form.time.errors }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Selection Field -->
+                <div class="field">
+                    <label class="label" for="{{ form.service.id_for_label }}">Service</label>
+                    <div class="control">
+                        <select class="input" name="{{ form.service.name }}" id="{{ form.service.id_for_label }}">
+                            <option value="" disabled {% if not form.service.value %}selected{% endif %}>Select a service</option>
+                            {% for option in form.service.field.queryset %}
+                            <option value="{{ option.id }}" {% if option.id == form.service.value %}selected{% endif %}>{{ option }}</option>
                             {% endfor %}
+                        </select>
+                    </div>
+                    {% if form.service.errors %}
+                    <p class="help is-danger">{{ form.service.errors }}</p>
+                    {% endif %}
+                </div>
 
+                <!-- Special Requests Field -->
+                <div class="field">
+                    <label class="label" for="{{ form.special_requests.id_for_label }}">Special Requests</label>
+                    <div class="control">
+                        <textarea class="textarea" name="{{ form.special_requests.name }}" id="{{ form.special_requests.id_for_label }}" placeholder="Any special requests?"></textarea>
+                    </div>
+                    {% if form.special_requests.errors %}
+                    <p class="help is-danger">{{ form.special_requests.errors }}</p>
+                    {% endif %}
+                </div>
 
-<h2>Book a Service</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Submit </button>
-</form>
+                <!-- Submit Button -->
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button is-link is-fullwidth">Submit</button>
+                    </div>
+                </div>
+            </form>
 
-{% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-{% endif %}
+            <!-- Success/Info Messages -->
+            {% if messages %}
+            <ul class="notification is-info">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </section>
+    </div>
+</section>
+
 
 {% endblock %}

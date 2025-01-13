@@ -6,13 +6,13 @@
 
 {% block maincontent %}
 
-  <section class="section">
+  <section class="section-blogp">
   <div class="container">
 
     <div class="columns">
       <!-- Sidebar for Categories -->
       <div class="column is-one-quarter">
-        <aside class="menu">
+        <aside class="menu ">
           <p class="menu-label">Categories</p>
           <ul class="menu-list">
             {% for category in categories %}
@@ -35,7 +35,7 @@
         </p>
     
           <!-- Blog Image with Text Wrapping -->
-          <div class="columns is-variable is-8 is-flex-wrap-wrap">
+          <div class="columns is-variable is-8">
             <div class="column is-one-third">
               <figure class="image is-4by3 mt-2">
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">

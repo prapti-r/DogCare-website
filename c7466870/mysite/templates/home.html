@@ -14,7 +14,7 @@
       <div class="container has-text-centered">
         <h1 class="title has-text-white is-size-1 is-size-3-mobile">Welcome to FuurEver</h1>
         <p class="subtitle has-text-white">Your pet, our priority</p>
-        <a href="{% url 'services' %}" class="button is-light">Our Services</a>
+        <a href="{% url 'services_list' %}" class="button is-light">Our Services</a>
       </div>
     </div>
   </section>
@@ -69,10 +69,32 @@
   </div>
 </div>
 
-
-
-
   <!-- Our Services Section -->
+  
+   <div class="section">
+    <div class="container">
+      <h2 class="title has-text-centered mb-5">Our Services</h2>
+    <div class="columns is-multiline">
+      {% for category in categories %}
+      <div class="column is-one-quarter mb-2">
+          <a href="{% url 'services_detail' category.slug %}" class="has-text-text">
+              <div class="columns is-vcentered">
+                  <div class="column is-narrow has-text-centered">
+                      <figure class="image is-64x64 is-centered">
+                          <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                      </figure>
+                  </div>
+                  <div class="column is-centered">
+                      <h4 class="is-size-4 has-text-weight-bold">{{ category.name }}</h4>
+                  </div>
+              </div>
+          </a>
+      </div>
+      {% endfor %}
+  </div>
+   </div>
+   </div>
+
     
   <!-- Book Now Section -->
   <section class="section has-background-link-soft" id="book-now">
@@ -80,7 +102,7 @@
       <p class="title is-size-4 is-size-5-touch">Ready to provide the best care for your furry friend?</p>
       <p class="subtitle is-size-6-touch">Schedule your service today!</p>
       <div>
-        <a href="#booking-form" class="button is-link">Book Now</a>
+        <a href="{% url 'services_list' %}#booking-form" class="button is-link">Book Now</a>
       </div>
     </div>
   </section>

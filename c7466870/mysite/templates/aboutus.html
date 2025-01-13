@@ -9,17 +9,17 @@
     <!-- Content Section -->
         <section class="section">
             <div class="container">
-                <div class="columns is-vcentered">
+                <h2 class=" title is-size-4-mobile has-text-centered">All About FuurEver</h2>
+                <div class="columns is-vcentered is-multiline">
                     <!-- Left Column: Image -->
-                    <div class="column is-5">
+                    <div class="column is-5-desktop is-full-tablet">
                         <figure class="image">
                             <img src="{% static '\img\dog.jpg' %}" alt="Dog image" style="border-radius: 10px;">
                         </figure>
                     </div>
                     <!-- Right Column: Text Content -->
-                    <div class="column is-7">
-                        <div class="content">
-                            <h2 class="is-size-3 is-size-4-mobile">All About FuurEver</h2>
+                    <div class="column is-7-desktop is-full-tablet">
+                        <div class="content">    
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatibus, dolor sunt,
                                  itaque temporibus animi iusto maxime provident modi tempore assumenda. Obcaecati natus 
@@ -152,7 +152,7 @@
         <p class="title is-size-4 is-size-5-touch">Ready to provide the best care for your furry friend?</p>
         <p class="subtitle is-size-6-touch">Schedule your service today!</p>
         <div>
-            <a href="#booking-form" class="button is-link">Book Now</a>
+            <a href="{% url 'services_list' %}#booking-form" class="button is-link">Book Now</a>
         </div>
         </div>
     </section>

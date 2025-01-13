@@ -11,7 +11,7 @@
   
   .hero-body {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
   }
   
   .has-background {
@@ -49,6 +49,11 @@
     margin-bottom: 0 !important;
   }
   
-  
     
-  
+  /* Disable icons in the input fields */
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    display: block;
+    right: 6px;
+  }

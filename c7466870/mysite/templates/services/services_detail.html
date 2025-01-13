@@ -1,6 +1,5 @@
-
-
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 <title>{{ category.name }} Services</title>
@@ -8,23 +7,44 @@
 
 {% block maincontent %}
 
-        <h1>{{ category.name }}</h1>
-        <p c>{{ category.description }}</p>
+<section class="section">
+    <div class="container">
+        <h1 class="title is-3 has-text-centered mb-4">{{ category.name }}</h1>
+        <p class="subtitle has-text-centered">{{ category.description }}</p>
 
         <hr>
+        <div class="columns">
+            <div class="column is-one-quarter is-hidden-touch">
+                <img src="{% static '\img\dog-on-bed.jpg' %}" alt="Dog on bed" class="image is-4by3 mb-3" >
+                <img src="{% static '\img\dogplaying.jpg' %}" alt="Dog playing" class="image is-4by3 mb-3" >
+                <img src="{% static '\img\dogsit.jpg' %}" alt="Dog siting" class="image is-4by3 mb-3" >
+                <img src="{% static '\img\dogvets.jpg' %}" alt="Dog vets" class="image is-4by3 mb-3" >
+                <img src="{% static '\img\sickdog.jpg' %}" alt="sick Dog " class="image is-4by3 mb-3" >
+            </div>
 
-        <h2>Available Services</h2>
-        <ul>
-            {% for service in category.services.all %}
-            <li >
-                <h3 >{{ service.name }}</h3>
-                <p >NPR. {{ service.price }}</p>
-                <p>{{ service.description }}</p>
-            </li>
-            {% endfor %}
-        </ul>
+        <div class="column is-three-quarters">
+            <h2 class="title is-4 has-text-centered">Available Services</h2>
+            <div class="columns is-multiline">
+                {% for service in category.services.all %}
+                <div class="column is-12-tablet is-6-desktop"> <!-- 2 columns on tablet, 3 on desktop -->
+                    <div class="box has-background-light is-flex is-flex-direction-column is-justify-content-space-between">
+                        <h3 class="title is-4">{{ service.name }}</h3>
+                        <p class="subtitle is-5 has-text-danger">$ {{ service.price }}</p>
+                        <p>{{ service.description|linebreaks|truncatewords:80 }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    
+    </div>
+        <div class="mt-5">
+            <a href="{% url 'services_list' %}" class="button is-link">Back to Services</a>
+          </div>
+        </div>
+    </div>
+</section>
 
-        <hr>
 
 
 {% endblock %}
