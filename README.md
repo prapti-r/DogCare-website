@@ -1,5 +1,5 @@
 ### 🐶 Dog Care Website
--Welcome to the Dog Care Website, a Django-based web application designed to offer reliable information and services related to dog care. Whether you're a pet owner, dog lover, or looking for professional care services, this site provides everything from blog articles and service listings to contact options.
+- Welcome to the Dog Care Website, a Django-based web application designed to offer reliable information and services related to dog care. Whether you're a pet owner, dog lover, or looking for professional care services, this site provides everything from blog articles and service listings to contact options.
 
 ### 🌐 Features
 - Home Page: Welcoming page with an overview of services and blog highlights.
