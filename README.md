@@ -1,7 +1,7 @@
-🐶 Dog Care Website
+###🐶 Dog Care Website
 Welcome to the Dog Care Website, a Django-based web application designed to offer reliable information and services related to dog care. Whether you're a pet owner, dog lover, or looking for professional care services, this site provides everything from blog articles and service listings to contact options.
 
-🌐 Features
+###🌐 Features
 Home Page: Welcoming page with an overview of services and blog highlights.
 
 About Us: Learn more about the mission and team behind the platform.
@@ -16,7 +16,7 @@ Admin Dashboard: Manage blogs, services, and other content through Django admin.
 
 Database Integration: All content is dynamically loaded from a MySQL database.
 
-🛠️ Technologies Used
+###🛠️ Technologies Used
 Backend: Django (Python)
 
 Frontend: HTML5, CSS3, Bulma 
@@ -25,7 +25,7 @@ Database: MySQL
 
 Admin Interface: Django Admin Panel
 
-🏗️ Models
+###🏗️ Models
 The project uses at least three related models:
 
 BlogPost: Contains title, content, image, and published date.
