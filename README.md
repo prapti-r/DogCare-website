@@ -6,7 +6,7 @@
 - About Us: Learn more about the mission and team behind the platform.
 - Blog: Regularly updated articles on dog care, training, nutrition, health, and more.
 - Services: Listings for dog walking, grooming, training, and veterinary services.
--Contact: Contact form or details for inquiries and support.
+- Contact: Contact form or details for inquiries and support.
 - Admin Dashboard: Manage blogs, services, and other content through Django admin.
 - Database Integration: All content is dynamically loaded from a MySQL database.
 
