@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
-        'USER': 'root',
-        'PASSWORD': 'B!te3pi9',
+        'NAME': # your database name,
+        'USER': # your user name,
+        'PASSWORD': # your password,
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
@@ -146,6 +146,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'prapti.risal12@gmail.com'  # Your email address
-EMAIL_HOST_PASSWORD = 'ywar rxcy pgir vlef'  # Your email password
-EMAIL_RECEIVER = 'prapti.risal12@gmail.com'  # Email to receive contact messages
+EMAIL_HOST_USER =   # Your email address
+EMAIL_HOST_PASSWORD =   # Your email password
+EMAIL_RECEIVER =   # Email to receive contact messages
